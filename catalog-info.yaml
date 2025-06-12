@@ -14,4 +14,4 @@ metadata:
 spec:
   type: forum-sentry-api
   lifecycle: experimental
-  owner: group:default/qa
+  owner: jaya
