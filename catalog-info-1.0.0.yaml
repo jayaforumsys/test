@@ -26,6 +26,6 @@ metadata:
 spec:
   type: openapi
   lifecycle: experimental
-  owner: group:default/qa
+  owner: jaya
   definition: 
     $text: ./spec-1.0.0.yaml
