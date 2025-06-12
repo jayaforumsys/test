@@ -1,0 +1,86 @@
+openapi: "3.1.0"
+info:
+  description: "Description not available"
+  version: "1.0.0"
+  title: "RestTestPolicy"
+servers:
+  - url: "/api/forum-sentry/proxy/"
+paths:
+  /rest:
+    get:
+      parameters:
+        - in: header
+          name: X-Sentry-Protocol
+          schema:
+            type: string
+            default: "http"
+          required: false
+          description: "Protocol used for the target service"
+        - in: header
+          name: X-Sentry-Host
+          schema:
+            type: string
+            default: "10.5.4.247"
+          required: false
+          description: "Host of the target service"
+        - in: header
+          name: X-Sentry-Port
+          schema:
+            type: string
+            default: "8080"
+          required: false
+          description: "Port of the target service"
+      responses:
+        '200':
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: "Invalid status value"
+    post:
+      parameters:
+        - in: header
+          name: X-Sentry-Protocol
+          schema:
+            type: string
+            default: "http"
+          required: false
+          description: "Protocol used for the target service"
+        - in: header
+          name: X-Sentry-Host
+          schema:
+            type: string
+            default: "10.5.4.247"
+          required: false
+          description: "Host of the target service"
+        - in: header
+          name: X-Sentry-Port
+          schema:
+            type: string
+            default: "8080"
+          required: false
+          description: "Port of the target service"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '201':
+          description: "Successful operation"
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: "Invalid input"
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+security:
+  - basicAuth: []

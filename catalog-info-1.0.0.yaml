@@ -1,0 +1,31 @@
+# catalog-info.yaml template
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: RestTestPolicy-1.0.0
+  title: RestTestPolicy 1.0.0
+  apiname: RestTestPolicy
+  version: "1.0.0"
+  apitype: REST Policies
+  component: RestTestPolicy
+  description: Add API description here
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+    devx/api-version: "1.0.0"
+    devx/base-api: RestTestPolicy
+  tags:
+    - openapi
+    
+  deployments:
+    $yaml: ./deployments.yaml
+  apiRelations:
+    - api: # Name of the API Service
+      version: # Version of API
+      type: internal
+      path:  # Path of the API being called (Optional)
+spec:
+  type: openapi
+  lifecycle: experimental
+  owner: group:default/qa
+  definition: 
+    $text: ./spec-1.0.0.yaml

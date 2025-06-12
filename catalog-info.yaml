@@ -1,0 +1,17 @@
+# Template for the base Component entity
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: RestTestPolicy
+  title: RestTestPolicy
+  apitype: REST Policies
+  description: Add API description here
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+  tags:
+    - openapi
+    
+spec:
+  type: forum-sentry-api
+  lifecycle: experimental
+  owner: group:default/qa

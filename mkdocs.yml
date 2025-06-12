@@ -1,0 +1,12 @@
+site_name: 'Your API Documentation'
+
+# nav:
+#   - Home: docs/index.md
+#   - API Diagram: docs/api-diagram.md
+
+theme:
+  name: material
+  font: false
+  
+plugins:
+  - techdocs-core
